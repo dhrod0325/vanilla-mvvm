@@ -4,10 +4,16 @@
 
 > [Component](core/dom/Component.js) 클래스 구현은 [Gumball12](https://github.com/Gumball12) 님이 작성하신 [mvvm-in-js](https://github.com/Gumball12/mvvm-in-js)를 많이 참고하였음
 
+## 더 해봐야 하는 것
+
+- for,if bind 사용
+- template html 파일명으로 호출 가능하도록 분리
+- store 생성
+
 ## 구현하며 배운것
 
-- Web Component 사용법
-- Proxy Api 사용법
+- Web Component 사용법 
+- Proxy Api 사용법 
 - EventTarget Api 활용한 이벤트 위임
 
 ## 사용방법
@@ -112,9 +118,3 @@ this.$emitter.on('waitEvent', () => alert(1));
 
 this.$emitter.emit('waitEvent');
 ```
-
-## TODO
-
-- for,if bind 사용
-- template html 파일명으로 호출 가능하도록 분리
-- store 생성

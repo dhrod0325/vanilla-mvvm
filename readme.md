@@ -2,9 +2,17 @@
 
 ## 직접 구현해 보는 Vanilla-mvvm 프레임워크
 
-### 사용방법
+> [Component](core/dom/Component.js) 클래스 구현은 [Gumball12](https://github.com/Gumball12) 님이 작성하신 [mvvm-in-js](https://github.com/Gumball12/mvvm-in-js)를 많이 참고하였음
 
-#### TodoList.js
+## 구현하며 배운것
+
+- Web Component 사용법
+- Proxy class 사용법
+- EventTarget class를 활용한 이벤트 위임
+
+## 사용방법
+
+### TodoList.js
 
 ``` javascript
 import {Component} from "../core";
@@ -35,8 +43,7 @@ export class TodoList extends Component {
 window.customElements.define('todo-list', TodoList);
 ```
 
-
-#### main.js
+### main.js
 
 ``` javascript
 import { App, EventEmitter } from './core';
@@ -51,9 +58,9 @@ const emitter = new EventEmitter();
 app.addComponent(document.createElement('todo-list'), { state, emitter });
 ```
 
-### Document
+## Document
 
-#### 선언
+### 선언
 ``` javascript
 setUp() {
     this.initialize({
@@ -65,7 +72,7 @@ setUp() {
 }
 ```
 
-#### 이벤트 바인딩
+### 이벤트 바인딩
 ``` html
 <button type="button" @click="helloWorld">EVENT</button>
 ```
@@ -89,26 +96,24 @@ export class TodoList extends Component {
 }
 ```
 
-#### 양방향 바인딩
+### 양방향 바인딩
 ``` javascript
 <input type="text" m-input-data="hello"/>
 ```
 
-#### 속성 
+### 속성 
 ```javascript
 <img m-attr-src="img" alt=""/> 
 ```
 
-#### 컴포넌트 이벤트 통신
+### 컴포넌트 이벤트 통신
 ``` javascript
 this.$emitter.on('waitEvent', () => alert(1));
 
 this.$emitter.emit('waitEvent');
 ```
 
-
-
-### TODO
+## TODO
 
 - for,if bind 사용
 - template html 파일명으로 호출 가능하도록 분리

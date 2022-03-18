@@ -113,7 +113,7 @@ export class TodoList extends Component {
 <img m-attr-src="img" alt=""/> 
 ```
 
-### 컴포넌트 이벤트 통신
+### 컴포넌트간 이벤트 통신
 ``` javascript
 this.$emitter.on('waitEvent', () => alert(1));
 

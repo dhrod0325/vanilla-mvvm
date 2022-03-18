@@ -51,10 +51,6 @@ const emitter = new EventEmitter();
 app.addComponent(document.createElement('todo-list'), { state, emitter });
 ```
 
-#### 화면
-
-![screenshot-1.PNG](screenshot-1.PNG)
-
 ### Document
 
 #### 선언
@@ -69,6 +65,30 @@ setUp() {
 }
 ```
 
+#### 이벤트 바인딩
+``` html
+<button type="button" @click="helloWorld">EVENT</button>
+```
+```javascript
+export class TodoList extends Component {
+    setUp() {
+        this.initialize({
+            template,
+            data: {
+                hello: ''
+            },
+            method:{
+                helloWorld(e){
+                    e.preventDefault();
+    
+                    alert('helloWorld');
+                }
+            }
+        });
+    }
+}
+```
+
 #### 양방향 바인딩
 ``` javascript
 <input type="text" m-input-data="hello"/>
@@ -78,6 +98,15 @@ setUp() {
 ```javascript
 <img m-attr-src="img" alt=""/> 
 ```
+
+#### 컴포넌트 이벤트 통신
+``` javascript
+this.$emitter.on('waitEvent', () => alert(1));
+
+this.$emitter.emit('waitEvent');
+```
+
+
 
 ### TODO
 

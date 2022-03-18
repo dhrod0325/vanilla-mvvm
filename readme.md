@@ -9,6 +9,7 @@
 - for,if bind 사용
 - template html 파일명으로 호출 가능하도록 분리
 - store 생성
+- TypeScript 적용
 
 ## 구현하며 배운것
 

@@ -2,20 +2,20 @@ import {Component} from "../core";
 
 const template = `
 <div class="todo-list">
-    hello world
+    <div>Hello World</div>
+    
     <input type="text" m-input-data="hello"/>
 </div>
-
 `;
 
-class TodoList extends Component {
+export class TodoList extends Component {
     setUp() {
         this.initialize({
             template,
             data: {
                 hello: ''
             }
-        })
+        });
     }
 
     mounted() {

@@ -7,8 +7,8 @@
 ## 구현하며 배운것
 
 - Web Component 사용법
-- Proxy class 사용법
-- EventTarget class를 활용한 이벤트 위임
+- Proxy Api 사용법
+- EventTarget Api 활용한 이벤트 위임
 
 ## 사용방법
 

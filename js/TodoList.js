@@ -28,10 +28,6 @@ export class TodoList extends Component {
 
     mounted() {
         this.$data.hello = 'world';
-
-        this.$emitter.on('waitEvent', () => alert(1));
-
-        this.$emitter.emit('waitEvent');
     }
 }
 

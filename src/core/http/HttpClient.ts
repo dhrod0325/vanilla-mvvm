@@ -1,11 +1,17 @@
+export declare type RequestArg = {
+  url: string;
+  config?: RequestInit;
+  data?: object;
+};
+
 export class HttpClient {
-  baseUrl;
+  private readonly baseUrl: string;
 
   constructor({ baseUrl = '' } = {}) {
     this.baseUrl = baseUrl;
   }
 
-  async request({ url, config }) {
+  async request({ url, config }: RequestArg) {
     config = {
       ...{ headers: new Headers({ 'content-type': 'application/json' }) },
       ...config,
@@ -15,23 +21,20 @@ export class HttpClient {
 
     try {
       const response = await fetch(callUrl, config);
-
       return await response.json();
     } catch (e) {
       console.log(e);
-
-      return {};
     }
   }
 
-  get({ url }) {
+  get({ url }: RequestArg) {
     return this.request({
       url,
       config: { method: 'GET' },
     });
   }
 
-  post({ url, data = {} }) {
+  post({ url, data = {} }: RequestArg) {
     const body = JSON.stringify(data);
 
     return this.request({
@@ -40,7 +43,7 @@ export class HttpClient {
     });
   }
 
-  delete({ url, data = {} }) {
+  delete({ url, data = {} }: RequestArg) {
     const body = JSON.stringify(data);
 
     return this.request({

@@ -1,6 +1,6 @@
-import { App, EventEmitter } from './core';
+import { App, EventEmitter } from './src/core';
 
-import '/js/TodoList';
+import '/src/js/TodoList';
 
 const app = new App(document.querySelector('#app'));
 
